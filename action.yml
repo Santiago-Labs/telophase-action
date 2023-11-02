@@ -1,0 +1,33 @@
+name: 'Telophase CLI deploy'
+description: 'Update your infrastructure with the Telophase CLI'
+inputs:
+  apply:
+    description: 'If the infrastructure change should be applied'
+    required: true
+    default: false 
+
+  cdk_path:
+    description: 'If the infrastructure change should be applied'
+    required: false 
+
+  account_tag:
+    description: 'Tag associated with the accounts to deploy'
+    required: false 
+    default: "all"
+
+  organization_path:
+    description: 'Path to your organization.yml file'
+    required: false 
+
+  stacks:
+    description: 'Stacks to deploy'
+    required: false 
+    default: ""
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.apply }}
+    - ${{ inputs.cdk-path }}
+    - ${{ inputs.account-tag }}
