@@ -2,7 +2,6 @@
 
 set -e
 
-# go install github.com/santiago-labs/telophasecli@latest
 apply=""
 if [ $INPUT_APPLY = true ]; then
     apply="--appply"
@@ -25,4 +24,4 @@ if [ $INPUT_STACKS ]; then
     stacks="--stacks=-\"$INPUT_STACKS\""
 fi
 
-./telophase deploy $apply $cdk_path $account_tag $org_file $stacks
+telophasecli deploy $apply $cdk_path $account_tag $org_file $stacks
