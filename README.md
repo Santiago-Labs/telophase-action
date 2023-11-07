@@ -9,7 +9,7 @@ In a GH Action file, for example, `.github/workflows/main.yaml`:
 on: [push]
 
 jobs:
-  create_cluster:
+  telophase_manage:
     runs-on: ubuntu-latest
     name: Manage AWS accounts and organization with telophase 
     steps:
@@ -32,12 +32,12 @@ jobs:
         apply: true
 ```
 
-# Inputs
-- apply: 'If the infrastructure change should be applied'
-- cdk_path: 'If the infrastructure change should be applied'
-- account_tag: 'Tag associated with the accounts to deploy'
-- organization_path: 'Path to your organization.yml file'
-- stacks: 'Stacks to deploy if not set will deploy all stacks' 
+ Inputs
+- `apply`: If the infrastructure change should be applied
+- `cdk_path`: If the infrastructure change should be applied
+- `account_tag`: Tag associated with the accounts to deploy
+- `organization_path`: Path to your organization.yml file
+- `stacks`: Stacks to deploy if not set will deploy all stacks
 
 # Env
 - `AWS_ACCESS_KEY_ID` Required
