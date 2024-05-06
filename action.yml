@@ -29,5 +29,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.apply }}
-    - ${{ inputs.cdk-path }}
     - ${{ inputs.account-tag }}
